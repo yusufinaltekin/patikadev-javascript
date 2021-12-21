@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background:linear-gradient(to bottom right,#2deb59,#00fab4,#00b5ff);
+}
+.container{
+    width: 1000px;
+    height: 100vh;
+    margin: 100px auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+
+}
+p{
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+.clock{
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 15px 0px;
+}
+#firstName{
+    display: inline-block;
+    margin: 0px 5px;
+}
