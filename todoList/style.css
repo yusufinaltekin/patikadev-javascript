@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #9556ff;
+  padding-top: 150px;
+  overflow: auto;
+  position: relative;
+}
+
+.add-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ef6365;
+  padding: 10px;
+}
+.text {
+  border: none;
+  outline: none;
+  height: 100%;
+  padding: 8px;
+  font-size: 18px;
+}
+.add-button {
+  border: none;
+  outline: none;
+  background-color: #9556ff;
+  padding: 7px 8px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.tasks-container {
+  margin: 50px 0px;
+}
+.tasks-container h2 {
+  font-size: 40px;
+  color: #fff;
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  max-width: 288px;
+  min-width: 288px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tasks-container h2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #fff;
+}
+.left-side {
+  letter-spacing: 1px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+.left-side .check-btn {
+  margin-right: 10px;
+  outline: none;
+  border: none;
+}
+.check-btn:checked ~ .task-name {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.7);
+}
+.right-side .delete-btn {
+  display: block;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: rgb(230, 0, 0);
+  cursor: pointer;
+}
+.alert , .success {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  background: #ff0000;
+  padding: 10px;
+  color: rgb(255, 247, 247);
+  font-weight: 600;
+  font-size: 20px;
+  display: none;
+}
+.success{
+  background: green;
+}
