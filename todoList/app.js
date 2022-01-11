@@ -16,6 +16,7 @@ const createTodo = (todo) => {
 
     const checkBox = document.createElement("input");
     checkBox.classList.add("check-btn");
+    checkBox.checked = todo.isCompleted;
     checkBox.type = "checkbox";
 
     const span = document.createElement("span");
@@ -44,6 +45,7 @@ const createTodo = (todo) => {
 
     tasks.appendChild(task);
     deleteButton.addEventListener("click", deleteTodo)
+    checkBox.addEventListener("click", checkTodo)
 
 }
 
@@ -80,7 +82,8 @@ const addTodo = (e) => {
     }
     else {
         const todo = {
-            text: result
+            text: result,
+            isCompleted: false
         }
         let todos = JSON.parse(localStorage.getItem("todos"));
         todos.push(todo);
@@ -109,8 +112,21 @@ const deleteTodo = (e) => {
     localStorage.setItem("todos", JSON.stringify(todos));
 
     todo.remove();
-
 }
+
+const checkTodo = (e) => {
+    const todo = e.target.parentElement;
+    const text = todo.children[1].textContent;
+
+    let todos = JSON.parse(localStorage.getItem("todos"));
+    todos.forEach(todo => {
+        if (todo.text === text) todo.isCompleted = !todo.isCompleted;
+    })
+    localStorage.setItem("todos", JSON.stringify(todos));
+
+    console.log(text);
+}
+
 startTodo();
 
 addBtn.addEventListener("click", addTodo);
